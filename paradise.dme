@@ -1909,7 +1909,7 @@
 #include "code\modules\virus2\helpers.dm"
 #include "code\modules\virus2\isolator.dm"
 #include "code\modules\virus2\items_devices.dm"
-#include "interface\interface.dm"
-#include "interface\stylesheet.dm"
-#include "interface\skin.dmf"
+#include "interface\Grief\interface.dm"
+#include "interface\Grief\stylesheet.dm"
+#include "interface\Grief\skin.dmf"
 // END_INCLUDE
