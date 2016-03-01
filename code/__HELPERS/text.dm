@@ -36,6 +36,12 @@
 			index = findtext(t, char)
 	return t
 
+//Removes a few problematic characters
+/proc/sanitize_simple(var/t,var/list/repl_chars = list("\n"="#","\t"="#"))
+	for(var/char in repl_chars)
+		t = replacetext(t, char, repl_chars[char])
+	return t
+
 /proc/readd_quotes(var/t)
 	var/list/repl_chars = list("&#34;" = "\"")
 	for(var/char in repl_chars)
@@ -46,7 +52,7 @@
 	return t
 
 //Used for preprocessing entered text
-/proc/sanitize(var/t, var/list/repl_chars = list("\n"="#","\t"="#"), var/input, var/max_length = MAX_MESSAGE_LEN, var/encode = 1, var/trim = 1, var/extra = 1, var/ja_mode = CHAT)
+/proc/sanitize(var/input, var/max_length = MAX_MESSAGE_LEN, var/encode = 1, var/trim = 1, var/extra = 1, var/ja_mode = CHAT)
 	#ifdef DEBUG_CYRILLIC
 	world << "\magenta DEBUG: \red <b>sanitize() entered, text:</b> <i>[input]</i>"
 	world << "\magenta DEBUG: \red <b>ja_mode:</b> [ja_mode]"
@@ -88,14 +94,11 @@
 	#endif
 
 	return input
-
-
-////Что бы нано работало нормально, нужно делать отдельный фильтр, не такой сложный, спец
-/proc/sanitize_nano(var/t,var/list/repl_chars = null,var/ja_mode = CHAT)
-	return html_encode(sanitize_old(t,repl_chars))
-
-/proc/sanitize_old(var/t,var/list/repl_chars = list("\n"="#","\t"="#"))
-	return html_encode(replace_characters(t,repl_chars))
+/*
+//Runs byond's sanitization proc along-side sanitize_simple
+/proc/sanitize(var/t,var/list/repl_chars = null,var/ja_mode = CHAT)
+	return html_encode(sanitize_simple(t,repl_chars))
+*/
 
 //Runs sanitize and strip_html_simple
 //I believe strip_html_simple() is required to run first to prevent '<' from displaying as '&lt;' after sanitize() calls byond's html_encode()
@@ -194,7 +197,7 @@
 //if tag is not in whitelist (var/list/paper_tag_whitelist in global.dm)
 //relpaces < with &lt;
 proc/checkhtml(var/t)
-	t = sanitize(t, list("&#"="."))
+	t = sanitize_simple(t, list("&#"="."))
 	var/p = findtext(t,"<",1)
 	while (p)	//going through all the tags
 		var/start = p++
@@ -401,7 +404,7 @@ proc/checkhtml(var/t)
 		else
 			return string
 	else
-		return sanitize("[copytext_preserve_html(string, 1, 37)]...")
+		return "[copytext_preserve_html(string, 1, 37)]..."
 
 //alternative copytext() for encoded text, doesn't break html entities (&#34; and other)
 /proc/copytext_preserve_html(var/text, var/first, var/last)
