@@ -51,54 +51,9 @@
 			index = findtext(t, char)
 	return t
 
-//Used for preprocessing entered text
-/proc/sanitize(var/input, var/max_length = MAX_MESSAGE_LEN, var/encode = 1, var/trim = 1, var/extra = 1, var/ja_mode = CHAT)
-	#ifdef DEBUG_CYRILLIC
-	world << "\magenta DEBUG: \red <b>sanitize() entered, text:</b> <i>[input]</i>"
-	world << "\magenta DEBUG: \red <b>ja_mode:</b> [ja_mode]"
-	#endif
-	if(!input)
-		return
-
-	if(max_length)
-		input = copytext(input,1,max_length)
-
-	input = replacetext(input, JA, JA_TEMP)
-
-	if(extra)
-		input = replace_characters(input, list("\n"=" ","\t"=" "))
-
-	if(encode)
-		//In addition to processing html, html_encode removes byond formatting codes like "\red", "\i" and other.
-		//It is important to avoid double-encode text, it can "break" quotes and some other characters.
-		//Also, keep in mind that escaped characters don't work in the interface (window titles, lower left corner of the main window, etc.)
-		input = html_encode(input)
-	else
-		//If not need encode text, simply remove < and >
-		//note: we can also remove here byond formatting codes: 0xFF + next byte
-		input = replace_characters(input, list("<"=" ", ">"=" "))
-
-	if(trim)
-		//Maybe, we need trim text twice? Here and before copytext?
-		input = trim(input)
-
-	switch(ja_mode)
-		if(CHAT)
-			input = replacetext(input, JA_TEMP, JA_CHAT)
-		if(POPUP)
-			input = replacetext(input, JA_TEMP, JA_POPUP)
-		//или оставляем как есть, для дальнейшей обработки отдельно
-
-	#ifdef DEBUG_CYRILLIC
-	world << "\magenta DEBUG: \blue <b>sanitize() finished, text:</b> <i>[input]</i>"
-	#endif
-
-	return input
-/*
 //Runs byond's sanitization proc along-side sanitize_simple
-/proc/sanitize(var/t,var/list/repl_chars = null,var/ja_mode = CHAT)
+/proc/sanitize(var/t,var/list/repl_chars = null)
 	return html_encode(sanitize_simple(t,repl_chars))
-*/
 
 //Runs sanitize and strip_html_simple
 //I believe strip_html_simple() is required to run first to prevent '<' from displaying as '&lt;' after sanitize() calls byond's html_encode()
@@ -414,5 +369,5 @@ proc/checkhtml(var/t)
 //Best used for sanitize object names, window titles.
 //If you have a problem with sanitize() in chat, when quotes and >, < are displayed as html entites -
 //this is a problem of double-encode(when & becomes &amp;), use sanitize() with encode=0, but not the sanitizeSafe()!
-/proc/sanitizeSafe(var/input, var/max_length = MAX_MESSAGE_LEN, var/encode = 1, var/trim = 1, var/extra = 1, var/ja_mode = CHAT)
-	return sanitize(replace_characters(input, list(">"=" ","<"=" ", "\""="'")), max_length, encode, trim, extra, ja_mode)
+/proc/sanitizeSafe(var/input, var/max_length = MAX_MESSAGE_LEN, var/encode = 1, var/trim = 1, var/extra = 1)
+	return sanitize(replace_characters(input, list(">"=" ","<"=" ", "\""="'")), max_length, encode, trim, extra)
