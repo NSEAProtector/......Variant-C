@@ -98,7 +98,7 @@
 						usr << "The PDA softly beeps."
 						pda.close(usr)
 					else
-						t = sanitize(copytext(t, 1, 20))
+						t = sanitize_rus(copytext(t, 1, 20))
 						pda.ttone = t
 			else
 				pda.close(usr)
@@ -151,7 +151,7 @@
 	var/t = input(U, "Please enter message", name, null) as text|null
 	if(!t)
 		return
-	t = sanitize(copytext(t, 1, MAX_MESSAGE_LEN))
+	t = sanitize_rus(copytext(t, 1, MAX_MESSAGE_LEN))
 	t = readd_quotes(t)
 	if (!t || !istype(P))
 		return

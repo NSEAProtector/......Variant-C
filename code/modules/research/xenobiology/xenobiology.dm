@@ -168,7 +168,7 @@
 			pet.icon_dead = "[M.colour] baby slime dead"
 			pet.colour = "[M.colour]"
 			qdel(M)
-			var/newname = sanitize(copytext(input(user, "Would you like to give the slime a name?", "Name your new pet", "pet slime") as null|text,1,MAX_NAME_LEN))
+			var/newname = sanitize_rus(copytext(input(user, "Would you like to give the slime a name?", "Name your new pet", "pet slime") as null|text,1,MAX_NAME_LEN))
 
 			if (!newname)
 				newname = "pet slime"
@@ -182,7 +182,7 @@
 			pet.icon_dead = "[M.colour] baby slime dead"
 			pet.colour = "[M.colour]"
 			qdel(M)
-			var/newname = sanitize(copytext(input(user, "Would you like to give the slime a name?", "Name your new pet", "pet slime") as null|text,1,MAX_NAME_LEN))
+			var/newname = sanitize_rus(copytext(input(user, "Would you like to give the slime a name?", "Name your new pet", "pet slime") as null|text,1,MAX_NAME_LEN))
 
 			if (!newname)
 				newname = "pet slime"

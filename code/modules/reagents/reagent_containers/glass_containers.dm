@@ -155,7 +155,7 @@
 				user << "<span class='notice'>You heat [src] with [I].</span>"
 				src.reagents.handle_reactions()
 		if(istype(I, /obj/item/weapon/pen) || istype(I, /obj/item/device/flashlight/pen))
-			var/tmp_label = sanitize(input(user, "Enter a label for [src.name]","Label",src.label_text))
+			var/tmp_label = sanitize_rus(input(user, "Enter a label for [src.name]","Label",src.label_text))
 			if(length(tmp_label) > 10)
 				user << "\red The label can be at most 10 characters long."
 			else

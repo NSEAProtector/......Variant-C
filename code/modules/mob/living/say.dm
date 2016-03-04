@@ -122,7 +122,7 @@ proc/get_radio_key_from_channel(var/channel)
 			src << "\red You cannot speak in IC (Muted)."
 			return
 
-	message = trim_strip_html_properly(message)
+	message = trim(sanitize_rus(copytext(message, 1, MAX_MESSAGE_LEN)))
 
 	if(stat)
 		if(stat == 2)
@@ -314,7 +314,7 @@ proc/get_radio_key_from_channel(var/channel)
 		src << "\blue Unusable emote '[act]'. Say *help for a list."
 
 /mob/living/whisper(message as text)
-	message = trim_strip_html_properly(message)
+	message = trim(sanitize_rus(copytext(message, 1, MAX_MESSAGE_LEN)))
 
 	//parse the language code and consume it
 	var/datum/language/speaking = parse_language(message)

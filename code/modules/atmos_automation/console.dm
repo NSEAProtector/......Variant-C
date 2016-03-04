@@ -140,7 +140,7 @@
 			if(!A) return 1
 			var/nl=input(usr, "Please enter a label for this automation task.") as text|null
 			if(!nl) return 1
-			nl	= copytext(sanitize(nl), 1, 50)
+			nl	= copytext(sanitize_rus(nl), 1, 50)
 			A.label=nl
 			updateUsrDialog()
 			return 1
