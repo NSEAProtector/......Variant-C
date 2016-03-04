@@ -672,12 +672,12 @@ var/list/slot_equipment_priority = list( \
 
 /mob
 	var/newPlayerType = /mob/new_player
-/*
+
 /mob/verb/abandon_mob()
 	set name = "Respawn"
 	set category = "OOC"
 
-	if (!abandon_allowed)
+	if (abandon_allowed)
 		usr << "<span class='warning'>Respawning is disabled.</span>"
 		return
 
@@ -707,16 +707,16 @@ var/list/slot_equipment_priority = list( \
 
 	M.key = key
 	return
-*/
+/*
 /mob/verb/abandon_mob()
 	set name = "Respawn"
 	set category = "OOC"
 
-	if (!( abandon_allowed ))
-		usr << "\blue Respawn is disabled."
+	if (!(abandon_allowed))
+		usr << "<span class='warning'>Respawning is disabled.</span>"
 		return
-	if ((stat != 2 || !( ticker )))
-		usr << "\blue <B>You must be dead to use this!</B>"
+	if (stat != DEAD || !ticker)
+		usr << "<span class='boldnotice'>You must be dead to use this!</span>"
 		return
 	if (ticker.mode.name == "meteor" || ticker.mode.name == "epidemic") //BS12 EDIT
 		usr << "\blue Respawn is disabled."
@@ -744,24 +744,30 @@ var/list/slot_equipment_priority = list( \
 		else
 			usr << "You can respawn now, enjoy your new life!"
 
-	log_game("[usr.name]/[usr.key] used abandon mob.")
+	log_game("[key_name(usr)] has respawned.")
 
-	usr << "\blue <B>Make sure to play a different character, and please roleplay correctly!</B>"
+	usr << "<span class='boldnotice'>Make sure to play a different character, and please roleplay correctly!</span>"
+
 
 	if(!client)
-		log_game("[usr.key] AM failed due to disconnect.")
+		log_game("[key_name(usr)] respawn failed due to disconnect.")
 		return
 	client.screen.Cut()
+	client.screen += client.void
+
 	if(!client)
-		log_game("[usr.key] AM failed due to disconnect.")
+		log_game("[key_name(usr)] respawn failed due to disconnect.")
 		return
 
 	var/mob/new_player/M = new /mob/new_player()
 	if(!client)
-		log_game("[usr.key] AM failed due to disconnect.")
-		del(M)
+		log_game("[key_name(usr)] respawn failed due to disconnect.")
+		qdel(M)
 		return
 
+	M.key = key
+	return
+*/
 /mob/verb/observe()
 	set name = "Observe"
 	set category = "OOC"
