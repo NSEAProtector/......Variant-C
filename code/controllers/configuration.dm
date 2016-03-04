@@ -53,7 +53,7 @@
 	var/allow_random_events = 0			// enables random events mid-round when set to 1
 	var/allow_ai = 1					// allow ai job
 	var/hostedby = null
-	var/respawn = 0
+
 	var/guest_jobban = 1
 	var/usewhitelist = 0
 	var/mods_are_mentors = 0
@@ -62,6 +62,8 @@
 	var/ToRban = 0
 	var/automute_on = 0					//enables automuting/spam prevention
 	var/jobs_have_minimal_access = 0	//determines whether jobs use minimal access or expanded access.
+	var/respawn = 1
+	var/respawn_delay = 2
 
 	var/reactionary_explosions = 0 //If we use reactionary explosions, explosions that react to walls and doors
 
