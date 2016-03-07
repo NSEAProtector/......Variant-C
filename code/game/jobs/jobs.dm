@@ -58,7 +58,6 @@ var/const/PILOT				=(1<<7)
 var/list/assistant_occupations = list(
 )
 
-
 var/list/command_positions = list(
 	"Captain",
 	"Head of Personnel",
@@ -68,14 +67,12 @@ var/list/command_positions = list(
 	"Chief Medical Officer"
 )
 
-
 var/list/engineering_positions = list(
 	"Chief Engineer",
 	"Station Engineer",
 	"Life Support Specialist",
 	"Mechanic"
 )
-
 
 var/list/medical_positions = list(
 	"Chief Medical Officer",
@@ -87,15 +84,13 @@ var/list/medical_positions = list(
 	"Paramedic"
 )
 
-
 var/list/science_positions = list(
 	"Research Director",
 	"Scientist",
-	"Geneticist",	//Part of both medical and science
+	"Geneticist",
 	"Roboticist",
 )
 
-//BS12 EDIT
 var/list/support_positions = list(
 	"Head of Personnel",
 	"Bartender",
@@ -135,7 +130,6 @@ var/list/security_positions = list(
 	"Security Pod Pilot"
 )
 
-
 var/list/civilian_positions = list(
 	"Civilian"
 )
@@ -154,7 +148,39 @@ var/list/whitelisted_positions = list(
 	"Mechanic",
 	"Brig Physician",
 	"Magistrate",
+
+	"Chief Engineer",
+
+	"AI",
+	"Cyborg",
+	"Drone",
+
+	"Head of Security",
+	"Warden",
+	"Detective",
+	"Brig Physician",
 	"Security Pod Pilot",
+
+	"Head of Personnel",
+	"Bartender",
+	"Botanist",
+	"Chef",
+	"Janitor",
+	"Librarian",
+	"Quartermaster",
+	"Internal Affairs Agent",
+	"Chaplain",
+	"Clown",
+	"Mime",
+	"Barber",
+
+	"Research Director",
+
+	"Chief Medical Officer",
+	"Psychiatrist",
+	"Chemist",
+	"Virologist",
+	"Paramedic"
 )
 
 
