@@ -142,37 +142,33 @@ var/list/nonhuman_positions = list(
 )
 
 var/list/whitelisted_positions = list(
-	"Blueshield",
-	"Nanotrasen Representative",
-	"Barber",
-	"Mechanic",
-	"Brig Physician",
-	"Magistrate",
-
 	"Chief Engineer",
-
+	"Drone",
 	"AI",
 	"Cyborg",
-	"Drone",
 
-	"Head of Security",
-	"Warden",
-	"Detective",
 	"Brig Physician",
 	"Security Pod Pilot",
+	"Detective",
+	"Blueshield",
+	"Warden",
+	"Head of Security",
 
-	"Head of Personnel",
-	"Bartender",
-	"Botanist",
-	"Chef",
-	"Janitor",
+
 	"Librarian",
-	"Quartermaster",
-	"Internal Affairs Agent",
 	"Chaplain",
 	"Clown",
 	"Mime",
+	"Botanist",
+	"Chef",
+	"Bartender",
+	"Janitor",
+	"Magistrate",
+	"Internal Affairs Agent",
+	"Quartermaster",
 	"Barber",
+	"Nanotrasen Representative",
+	"Head of Personnel",
 
 	"Research Director",
 
@@ -180,7 +176,9 @@ var/list/whitelisted_positions = list(
 	"Psychiatrist",
 	"Chemist",
 	"Virologist",
-	"Paramedic"
+	"Paramedic",
+
+	"Mechanic",
 )
 
 

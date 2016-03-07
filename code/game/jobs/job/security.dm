@@ -75,7 +75,6 @@
 		H.equip_or_collect(new /obj/item/device/pda/warden(H), slot_wear_pda)
 		H.equip_or_collect(new /obj/item/clothing/gloves/color/black(H), slot_gloves)
 		H.equip_or_collect(new /obj/item/clothing/glasses/hud/security/sunglasses(H), slot_glasses)
-//		H.equip_or_collect(new /obj/item/clothing/mask/gas(H), slot_wear_mask) //Grab one from the armory you donk
 		H.equip_or_collect(new /obj/item/device/flash(H), slot_l_store)
 		H.equip_or_collect(new /obj/item/weapon/gun/energy/advtaser(H), slot_s_store)
 		if(H.backbag == 1)
@@ -117,9 +116,6 @@
 		H.equip_or_collect(new /obj/item/clothing/shoes/brown(H), slot_shoes)
 		H.equip_or_collect(new /obj/item/device/pda/detective(H), slot_wear_pda)
 		H.equip_or_collect(new /obj/item/toy/crayon/white(H), slot_l_store)
-/*		var/obj/item/clothing/mask/cigarette/CIG = new /obj/item/clothing/mask/cigarette(H)
-		CIG.light("")
-		H.equip_or_collect(CIG, slot_wear_mask)	*/
 		H.equip_or_collect(new /obj/item/clothing/glasses/sunglasses/noir(H),slot_glasses)
 		H.equip_or_collect(new /obj/item/clothing/gloves/color/black(H), slot_gloves)
 		if(H.mind.role_alt_title && H.mind.role_alt_title == "Forensic Technician")
@@ -129,7 +125,7 @@
 			H.equip_or_collect(new /obj/item/clothing/head/det_hat(H), slot_head)
 		H.equip_or_collect(new /obj/item/weapon/lighter/zippo(H), slot_l_store)
 
-		if(H.backbag == 1)//Why cant some of these things spawn in his office?
+		if(H.backbag == 1)
 			H.equip_or_collect(new /obj/item/weapon/storage/box/survival(H), slot_r_hand)
 			H.equip_or_collect(new /obj/item/weapon/storage/box/evidence(H), slot_l_hand)
 			H.equip_or_collect(new /obj/item/device/detective_scanner(H), slot_r_store)
@@ -175,7 +171,6 @@
 		H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet(H), slot_head)
 		H.equip_or_collect(new /obj/item/device/pda/security(H), slot_wear_pda)
 		H.equip_or_collect(new /obj/item/clothing/gloves/color/black(H), slot_gloves)
-		H.equip_or_collect(new /obj/item/weapon/gun/energy/advtaser(H), slot_s_store)
 		H.equip_or_collect(new /obj/item/device/flash(H), slot_l_store)
 		if(H.backbag == 1)
 			H.equip_or_collect(new /obj/item/weapon/storage/box/survival(H), slot_r_hand)

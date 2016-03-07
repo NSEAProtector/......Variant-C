@@ -184,13 +184,36 @@ You've gained <b>[totalkarma]</b> total karma in your time here.<br>"}
 	switch(karma_tab)
 		if (0) // Job Unlocks
 			dat += {"
-			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=1'>Unlock Barber -- 5KP</a><br>
-			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=2'>Unlock Brig Physician -- 5KP</a><br>
-			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=3'>Unlock Nanotrasen Representative -- 30KP</a><br>
-			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=5'>Unlock Blueshield -- 30KP</a><br>
-			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=9'>Unlock Security Pod Pilot -- 30KP</a><br>
-			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=6'>Unlock Mechanic -- 30KP</a><br>
-			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=7'>Unlock Magistrate -- 45KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=1'>Unlock Chief Engineer -- 16KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=2'>Unlock Drone -- 24KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=3'>Unlock AI -- 32KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=4'>Unlock Cyborg -- 48KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=5'>Unlock Brig Physician -- 1KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=6'>Unlock Security Pod Pilot -- 3KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=7'>Unlock Detective -- 9KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=8'>Unlock Blueshield -- 16KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=9'>Unlock Warden -- 24KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=10'>Unlock Head of Security -- 32KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=11'>Unlock Librarian -- 1KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=12'>Unlock Chaplain -- 2KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=13'>Unlock Clown -- 2KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=14'>Unlock Mime -- 2KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=15'>Unlock Botanist -- 3KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=16'>Unlock Chef -- 3KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=17'>Unlock Bartender -- 4KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=18'>Unlock Janitor -- 4KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=19'>Unlock Magistrate -- 3KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=20'>Unlock Internal Affairs Agent -- 1KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=21'>Unlock Quartermaster -- 6KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=22'>Unlock Barber -- 6KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=23'>Unlock Nanotrasen Representative -- 6KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=24'>Unlock Head of Personnel -- 32KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=25'>Unlock Research Director -- 32KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=26'>Unlock Chief Medical Officer -- 32KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=27'>Unlock Psychiatrist -- 1KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=28'>Unlock Chemist -- 2KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=26'>Unlock Virologist -- 4KP</a><br>
+			<a href='?src=\ref[src];karmashop=shop;KarmaBuy=27'>Unlock Paramedic -- 4KP</a><br>
 			"}
 
 		if (1) // Species Unlocks
