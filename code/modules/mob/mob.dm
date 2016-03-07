@@ -633,7 +633,7 @@ var/list/slot_equipment_priority = list( \
 		src << "The game appears to have misplaced your mind datum, so we can't show you your notes."
 
 /mob/proc/store_memory(msg as message, popup, sane = 1)
-	msg = copytext(msg, 1, MAX_MESSAGE_LEN)
+	msg = sanitize_rus_uni(copytext(msg, 1, MAX_MESSAGE_LEN))
 
 	if (sane)
 		msg = sanitize_rus(msg)
@@ -653,7 +653,7 @@ var/list/slot_equipment_priority = list( \
 	var/msg = input(usr,"Set the flavor text in your 'examine' verb. Can also be used for OOC notes about your character.","Flavor Text",html_decode(flavor_text)) as message|null
 
 	if(msg != null)
-		msg = copytext(msg, 1, MAX_MESSAGE_LEN)
+		msg = sanitize_rus(copytext(msg, 1, MAX_MESSAGE_LEN))
 		msg = html_encode(msg)
 
 		flavor_text = msg
@@ -680,54 +680,11 @@ var/list/slot_equipment_priority = list( \
 	if (abandon_allowed)
 		usr << "<span class='warning'>Respawning is disabled.</span>"
 		return
-
 	if (stat != DEAD || !ticker)
 		usr << "<span class='boldnotice'>You must be dead to use this!</span>"
-		return
-
-	log_game("[key_name(usr)] has respawned.")
-
-	usr << "<span class='boldnotice'>Make sure to play a different character, and please roleplay correctly!</span>"
-
-	if(!client)
-		log_game("[key_name(usr)] respawn failed due to disconnect.")
-		return
-	client.screen.Cut()
-	client.screen += client.void
-
-	if(!client)
-		log_game("[key_name(usr)] respawn failed due to disconnect.")
-		return
-
-	var/mob/new_player/M = new /mob/new_player()
-	if(!client)
-		log_game("[key_name(usr)] respawn failed due to disconnect.")
-		qdel(M)
-		return
-
-	M.key = key
-	return
-/*
-/mob/verb/abandon_mob()
-	set name = "Respawn"
-	set category = "OOC"
-
-	if (!(abandon_allowed))
-		usr << "<span class='warning'>Respawning is disabled.</span>"
-		return
-	if (stat != DEAD || !ticker)
-		usr << "<span class='boldnotice'>You must be dead to use this!</span>"
-		return
-	if (ticker.mode.name == "meteor" || ticker.mode.name == "epidemic") //BS12 EDIT
-		usr << "\blue Respawn is disabled."
 		return
 	else
 		var/deathtime = world.time - src.timeofdeath
-		if(istype(src,/mob/dead/observer))
-			var/mob/dead/observer/G = src
-			if(G.has_enabled_antagHUD == 1 && config.antag_hud_restricted)
-				usr << "\blue <B>Upon using the antagHUD you forfeighted the ability to join the round.</B>"
-				return
 		var/deathtimeminutes = round(deathtime / 600)
 		var/pluralcheck = "minute"
 		if(deathtimeminutes == 0)
@@ -748,7 +705,6 @@ var/list/slot_equipment_priority = list( \
 
 	usr << "<span class='boldnotice'>Make sure to play a different character, and please roleplay correctly!</span>"
 
-
 	if(!client)
 		log_game("[key_name(usr)] respawn failed due to disconnect.")
 		return
@@ -767,7 +723,7 @@ var/list/slot_equipment_priority = list( \
 
 	M.key = key
 	return
-*/
+
 /mob/verb/observe()
 	set name = "Observe"
 	set category = "OOC"

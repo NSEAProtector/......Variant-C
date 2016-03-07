@@ -31,7 +31,7 @@
 	set name = "Me"
 	set category = "IC"
 
-	message = strip_html_properly(message)
+	message = trim(sanitize_rus(message, 1, MAX_MESSAGE_LEN))
 
 	set_typing_indicator(0)
 	if(use_me)

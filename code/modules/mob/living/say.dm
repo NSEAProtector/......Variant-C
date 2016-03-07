@@ -314,7 +314,7 @@ proc/get_radio_key_from_channel(var/channel)
 		src << "\blue Unusable emote '[act]'. Say *help for a list."
 
 /mob/living/whisper(message as text)
-	message = trim(sanitize_rus(copytext(message, 1, MAX_MESSAGE_LEN)))
+	message = trim_strip_html_properly(message)
 
 	//parse the language code and consume it
 	var/datum/language/speaking = parse_language(message)
@@ -366,7 +366,7 @@ proc/get_radio_key_from_channel(var/channel)
 	else
 		not_heard = "[verb] something" //TODO get rid of the null language and just prevent speech if language is null
 
-	message = trim(message)
+	message = trim(sanitize_rus(message, 1, MAX_MESSAGE_LEN))
 
 	var/speech_problem_flag = 0
 	var/list/handle_s = handle_speech_problems(message, verb)
