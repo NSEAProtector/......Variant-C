@@ -32,12 +32,15 @@
 	set category = "IC"
 
 	message = trim(sanitize_rus(message, 1, MAX_MESSAGE_LEN))
-
+/*
 	set_typing_indicator(0)
 	if(use_me)
 		custom_emote(usr.emote_type, message)
+
 	else
 		usr.emote(message)
+*/
+	usr.emote(message)
 
 /mob/proc/say_dead(var/message)
 	if(!src.client.holder)
