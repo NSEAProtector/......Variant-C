@@ -349,13 +349,12 @@ var/world_topic_spam_protect_time = world.timeofday
 	if (config && config.server_name)
 		s += "<b>[config.server_name]</b> &#8212; "
 
-	s += "<b>[station_name()]</b>";
 	s += " ("
-	s += "<a href=\"http://nanotrasen.se/phpBB3/index.php\">" //Change this to wherever you want the hub to link to.
-	s += "[game_version]"
+	s += "<a href=\"http://rp-nation.ucoz.org/phpBB3/index.php\">"
+	s += "Join Us! (today rus only version)"
 	s += "</a>"
 	s += ")"
-	s += "<br>The Perfect Mix of RP & Action<br>"
+	s += "<br>PKS & RP Nation server #1<br>"
 
 
 

@@ -27,8 +27,8 @@
 	var/allow_vote_mode = 0				// allow votes to change mode
 	var/vote_delay = 6000				// minimum time between voting sessions (deciseconds, 10 minute default)
 	var/vote_period = 600				// length of voting period (deciseconds, default 1 minute)
-	var/vote_autotransfer_initial = 72000 // Length of time before the first autotransfer vote is called
-	var/vote_autotransfer_interval = 18000 // length of time before next sequential autotransfer vote
+	var/vote_autotransfer_initial = 100000 // Length of time before the first autotransfer vote is called
+	var/vote_autotransfer_interval = 1000000 // length of time before next sequential autotransfer vote
 	var/vote_no_default = 0				// vote does not default to nochange/norestart (tbi)
 	var/vote_no_dead = 0				// dead people can't vote (tbi)
 //	var/enable_authentication = 0		// goon authentication
@@ -80,8 +80,8 @@
 
 	var/server
 	var/banappeals
-	var/wikiurl = "http://example.org"
-	var/forumurl = "http://example.org"
+	var/wikiurl = "http://nanotrasen.se/wiki/index.php/Main_Page"
+	var/forumurl = "http://rp-nation.ucoz.org/forum"
 	var/rulesurl = "http://example.org"
 	var/donationsurl = "http://example.org"
 	var/repositoryurl = "http://example.org"
