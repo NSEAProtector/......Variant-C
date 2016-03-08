@@ -104,7 +104,7 @@ CREATE TABLE `customuseritems` (
   `cuiPropAdjust` text,
   `cuiJobMask` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,7 +131,7 @@ CREATE TABLE `death` (
   `fireloss` int(11) NOT NULL,
   `oxyloss` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=166546 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=166546 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -192,7 +192,7 @@ CREATE TABLE `ban` (
   `a_computerid` varchar(32) NOT NULL,
   `a_ip` varchar(32) NOT NULL,
   `who` text NOT NULL,
-  `adminwho` text NOT NULL,
+  `adminwho` varchar(32) NOT NULL,
   `edits` text,
   `unbanned` tinyint(1) DEFAULT NULL,
   `unbanned_datetime` datetime DEFAULT NULL,
@@ -218,7 +218,7 @@ CREATE TABLE `feedback` (
   `var_value` int(16) DEFAULT NULL,
   `details` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=257638 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=257638 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -358,17 +358,17 @@ DROP TABLE IF EXISTS `karma`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `karma` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `spendername` text NOT NULL,
-  `spenderkey` text NOT NULL,
-  `receivername` text NOT NULL,
-  `receiverkey` text NOT NULL,
+  `spendername` varchar(32) NOT NULL,
+  `spenderkey` varchar(32) NOT NULL,
+  `receivername` varchar(32) NOT NULL,
+  `receiverkey` varchar(32) NOT NULL,
   `receiverrole` text,
   `receiverspecial` text,
   `isnegative` tinyint(1) DEFAULT NULL,
-  `spenderip` text NOT NULL,
+  `spenderip` varchar(32) NOT NULL,
   `time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=73614 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=73614 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -380,11 +380,11 @@ DROP TABLE IF EXISTS `karmatotals`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `karmatotals` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `byondkey` text NOT NULL,
+  `byondkey` varchar(32) NOT NULL,
   `karma` int(11) NOT NULL,
   `karmaspent` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6765 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6765 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -402,7 +402,7 @@ CREATE TABLE `library` (
   `category` text NOT NULL,
   `ckey` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=929 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=929 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -418,7 +418,7 @@ CREATE TABLE `legacy_population` (
   `admincount` int(11) DEFAULT NULL,
   `time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2550 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2550 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -430,11 +430,11 @@ DROP TABLE IF EXISTS `whitelist`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `whitelist` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ckey` text NOT NULL,
-  `job` text,
-  `species` text,
+  `ckey` varchar(32) NOT NULL,
+  `job` varchar(16),
+  `species` varchar(16),
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=877 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=877 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
