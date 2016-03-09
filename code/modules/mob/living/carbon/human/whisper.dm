@@ -5,7 +5,7 @@
 	if(name != GetVoice())
 		alt_name = "(as [get_id_name("Unknown")])"
 
-	message = trim_strip_html_properly(message) //bit of duplicate code, acceptable because the workaround would be annoying
+	message = trim_strip_html_properly(sanitize_rus(message)) //bit of duplicate code, acceptable because the workaround would be annoying
 
 	//parse the language code and consume it
 	var/datum/language/speaking = parse_language(message)

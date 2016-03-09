@@ -5,6 +5,7 @@
 /mob/verb/whisper(message as text)
 	set name = "Whisper"
 	set category = "IC"
+
 	return
 
 /mob/verb/say_verb(message as text)
@@ -31,15 +32,15 @@
 	set name = "Me"
 	set category = "IC"
 
-	message = trim(sanitize_rus(message, 1, MAX_MESSAGE_LEN))
-/*
+	message = sanitize_rus(message)
+
 	set_typing_indicator(0)
 	if(use_me)
 		custom_emote(usr.emote_type, message)
 
 	else
 		usr.emote(message)
-*/
+
 	usr.emote(message)
 
 /mob/proc/say_dead(var/message)

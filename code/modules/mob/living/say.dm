@@ -314,7 +314,7 @@ proc/get_radio_key_from_channel(var/channel)
 		src << "\blue Unusable emote '[act]'. Say *help for a list."
 
 /mob/living/whisper(message as text)
-	message = sanitize_rus(message)
+	message = trim_strip_html_properly(message)
 
 	//parse the language code and consume it
 	var/datum/language/speaking = parse_language(message)
