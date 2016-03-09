@@ -10,6 +10,7 @@
 	required_players_secret = 20
 	required_enemies = 3
 	recommended_enemies = 3
+	votable = 0
 	var/result = 0
 	var/checkwin_counter = 0
 	var/xenos_list = list()

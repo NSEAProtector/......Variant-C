@@ -18,6 +18,7 @@ datum/game_mode/mutiny
 	config_tag = "mutiny"
 	required_players = 7
 	ert_disabled = 1
+	votable = 0
 
 	uplink_welcome = "Mutineers Uplink Console:"
 	uplink_uses = 0

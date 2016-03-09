@@ -6,6 +6,7 @@ datum/game_mode/nations
 	var/victory = 0
 	var/list/cargonians = list("Quartermaster","Cargo Technician","Shaft Miner")
 	var/list/servicion = list("Clown", "Mime", "Bartender", "Chef", "Botanist", "Librarian", "Chaplain", "Barber")
+	votable = 0
 
 
 /datum/game_mode/nations/post_setup()
@@ -221,7 +222,7 @@ datum/game_mode/nations
 			H.mind.nation.membership += H.mind.current
 			H << "You are now part of the great sovereign nation of [H.mind.nation.current_name]!"
 			return 1
-			
+
 		if(H.mind.assigned_role in civilian_positions)
 			H << "You do not belong to any nation and are free to sell your services to the highest bidder."
 			return 1

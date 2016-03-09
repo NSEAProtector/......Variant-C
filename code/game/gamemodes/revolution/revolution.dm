@@ -21,6 +21,7 @@
 	required_players_secret = 15
 	required_enemies = 3
 	recommended_enemies = 3
+	votable = 0
 
 
 	uplink_welcome = "Revolutionary Uplink Console:"

@@ -9,6 +9,7 @@
 	var/mages_made = 1
 	var/time_checked = 0
 	var/players_per_mage = 6 // If the admin wants to tweak things or something
+	votable = 0
 	but_wait_theres_more = 1
 	var/delay_per_mage = 4200 // Every 7 minutes by default
 	var/time_till_chaos = 18000 // Half-hour in

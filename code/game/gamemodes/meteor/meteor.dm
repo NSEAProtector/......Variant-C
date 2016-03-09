@@ -5,6 +5,7 @@
 	var/wave = 1
 	required_players = 35
 	required_players_secret = 35
+	votable = 0
 
 	uplink_welcome = "EVIL METEOR Uplink Console:"
 	uplink_uses = 10

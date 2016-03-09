@@ -14,6 +14,7 @@ proc/issyndicate(mob/living/M as mob)
 
 	uplink_welcome = "Corporate Backed Uplink Console:"
 	uplink_uses = 120
+	votable = 0
 
 	var/const/agents_possible = 5 //If we ever need more syndicate agents.
 

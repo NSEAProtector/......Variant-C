@@ -2,6 +2,7 @@
 
 /datum/game_mode
 	var/list/datum/mind/cult = list()
+
 	var/list/allwords = list("travel","self","see","hell","blood","join","tech","destroy", "other", "hide")
 
 
@@ -34,6 +35,8 @@
 	required_players_secret = 15
 	required_enemies = 3
 	recommended_enemies = 4
+
+
 
 	uplink_welcome = "Nar-Sie Uplink Console:"
 	uplink_uses = 20

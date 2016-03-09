@@ -8,6 +8,7 @@
 	required_players_secret = 10
 	required_enemies = 1
 	recommended_enemies = 1
+	votable = 0
 
 	uplink_welcome = "Wizardly Uplink Console:"
 	uplink_uses = 20
