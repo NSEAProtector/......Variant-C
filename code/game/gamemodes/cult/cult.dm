@@ -2,6 +2,7 @@
 
 /datum/game_mode
 	var/list/datum/mind/cult = list()
+
 	var/list/allwords = list("travel","self","see","hell","blood","join","tech","destroy", "other", "hide")
 
 
@@ -34,6 +35,8 @@
 	required_players_secret = 15
 	required_enemies = 3
 	recommended_enemies = 4
+
+
 
 	uplink_welcome = "Nar-Sie Uplink Console:"
 	uplink_uses = 20
@@ -186,7 +189,7 @@
 		update_cult_icons_added(cult_mind)
 		cult_mind.current.attack_log += "\[[time_stamp()]\] <span class='danger'>Has been converted to the cult!</span>"
 		if(jobban_isbanned(cult_mind.current, ROLE_CULTIST))
-			replace_jobbaned_player(cult_mind.current, ROLE_CULTIST, ROLE_CULTIST)
+			replace_jobbaned_player(cult_mind.current, ROLE_CULTIST)
 		return 1
 
 

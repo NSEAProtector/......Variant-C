@@ -21,6 +21,7 @@
 	required_players_secret = 15
 	required_enemies = 3
 	recommended_enemies = 3
+	votable = 0
 
 
 	uplink_welcome = "Revolutionary Uplink Console:"
@@ -226,7 +227,7 @@
 	rev_mind.special_role = "Revolutionary"
 	update_rev_icons_added(rev_mind)
 	if(jobban_isbanned(rev_mind.current, ROLE_REV))
-		replace_jobbaned_player(rev_mind.current, ROLE_REV, ROLE_REV)
+		replace_jobbaned_player(rev_mind.current, ROLE_REV)
 	return 1
 //////////////////////////////////////////////////////////////////////////////
 //Deals with players being converted from the revolution (Not a rev anymore)//  // Modified to handle borged MMIs.  Accepts another var if the target is being borged at the time  -- Polymorph.
