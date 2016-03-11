@@ -22,7 +22,7 @@ z7 = empty
         #include "map_files\cyberiad_grief\z6.dmm"
         #include "map_files\cyberiad_grief\z7.dmm"
 
-        #define MAP_FILE "cyberiad.dmm"
+        #define MAP_FILE "cyberiad_grief\cyberiad.dmm"
         #define MAP_NAME "NSS C4M5"
 
 #elif !defined(MAP_OVERRIDE)
